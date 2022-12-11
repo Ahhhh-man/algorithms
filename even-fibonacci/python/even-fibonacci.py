@@ -9,7 +9,7 @@ sequence whose values do not exceed four million, find the sum of the even-value
 """
 
 def fibonacci(num):
-    return (fibonacci(num - 1) + fibonacci(num - 2)) if num > 1 else 1
+    return (fibonacci(num - 1) + fibonacci(num - 2)) if num > 2 else 1
 
 
 def even_fibonacci_sum(upper_bound):
@@ -17,8 +17,10 @@ def even_fibonacci_sum(upper_bound):
 
 
 counter = 1
-while fibonacci(counter) <= 4_000_000:
+while fibonacci(counter) < 4_000_000:
     counter += 1
+
+counter -= 1
 # counter = 33, hence fibonacci(33) > 4_000_000 where 33 is the smallest int
 
-print(even_fibonacci_sum(counter))  # 4613732 (my answer)
+print(even_fibonacci_sum(counter))
